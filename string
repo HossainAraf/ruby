@@ -1,0 +1,13 @@
+
+[1mFrom:[0m /mnt/d/BackEnd/Ruby/Ruby_forLearingOnly/debugging.rb:28 Object#isogram?:
+
+    [1;34m22[0m: [32mdef[0m [1;34misogram?[0m(string)
+    [1;34m23[0m:   original_length = string.length
+    [1;34m24[0m:   string_array = string.downcase.split
+    [1;34m25[0m: 
+    [1;34m26[0m:   binding.pry
+    [1;34m27[0m: 
+ => [1;34m28[0m:   unique_length = string_array.uniq.length
+    [1;34m29[0m:   original_length == unique_length
+    [1;34m30[0m: [32mend[0m
+
