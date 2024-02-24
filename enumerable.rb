@@ -37,3 +37,8 @@ my_hash.each { |key, value| puts "#{key} maps to #{value}" }
 
 # when you use only one block parameter, Ruby treats each element of the hash as an array with two elements: the key and its corresponding value.
 my_hash.each { |pair| puts "The pair is #{pair}" }
+
+
+#each returns the original array or hash regardless of what happens inside the code block.
+friends = ["Sharon", "Leo", "Leila", "Brian", "Arun"]
+print friends.each { |friend| friend.upcase } # => ["Sharon", "Leo", "Leila", "Brian", "Arun"]
