@@ -42,3 +42,29 @@ my_hash.each { |pair| puts "The pair is #{pair}" }
 #each returns the original array or hash regardless of what happens inside the code block.
 friends = ["Sharon", "Leo", "Leila", "Brian", "Arun"]
 print friends.each { |friend| friend.upcase } # => ["Sharon", "Leo", "Leila", "Brian", "Arun"]
+puts
+
+# each_with_index METHOD
+fruits = ["apple", "banana", "strawberry", "pineapple"]
+fruits.each_with_index { |fruit, index| puts fruit if index.even? }
+# Just like with the #each method, #each_with_index returns the original array it’s called on.
+
+# map METHOD
+friends = ["Sharon", "Leo", "Leila", "Brian", "Arun"]
+friends_uppercase = []
+friends.each { |friend| friends_uppercase.push(friend.upcase) }
+print friends_uppercase # => ["SHARON", "LEO", "LEILA", "BRIAN", "ARUN"]
+# Alternatively we can use the map method to achieve the same result in a more concise way. 
+puts
+friends = ["Sharon", "Leo", "Leila", "Brian", "Arun"]
+print friends.map { |friend| friend.upcase } # => ["SHARON", "LEO", "LEILA", "BRIAN", "ARUN"]
+# The map method returns a new array containing the results of applying the block to each element of the original array.
+puts
+
+my_order = ['medium Big Mac', 'medium fries', 'medium soda']
+puts my_order.map { |item| item.gsub("meium", "extra large")}
+
+salaries = [1200, 1500, 1100, 1800]
+expend_without_houserent = salaries.map { |salary| salary -700} # house rent is 700
+puts expend_without_houserent
+# The map method returns a new array containing the results of applying the block to each element of the original array.
