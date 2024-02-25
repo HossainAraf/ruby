@@ -76,6 +76,7 @@ result = fruits.all? { |fruit| fruit.length >= 3 }
 puts result
 result = fruits.all? { |fruit| fruit.length >= 5 }
 puts result
+# Special note to keep in mind while debugging: #all? will return true by default unless the block returns false or nil. So if you call #all? on an empty array or hash (i.e., there are no elements for the block to evaluate), it will return true.
 
 # none? METHOD
   # without using none? method
