@@ -134,3 +134,49 @@ puts tally
   friends = ["Sharon", "Leo", "Leila", "Brian", "Arun"]
   puts friends.map! { |friend| friend.upcase } # => ["SHARON", "LEO", "LEILA", "BRIAN", "ARUN"]
   puts friends # => ["SHARON", "LEO", "LEILA", "BRIAN", "ARUN"]
+
+# RETURN VALUES OF ENUMERABLE METHODS
+# So if it’s not a good idea to use bang methods but we need to reuse the result of an enumerable method throughout our program, what can we do instead?
+ # OPTION 1: Assign the result of the enumerable method to a local variable
+  friends = ["Sharon", "Leo", "Leila", "Brian", "Arun"]
+  invited_list = friends.select { |friend| friend != "Brian" }
+  print invited_list
+  print friends
+
+  # OPTION 2: Wrap the enumerable method in a method
+  friends = ["Sharon", "Leo", "Leila", "Brian", "Arun"]
+  def invited_list(friends)
+    friends.select { |friend| friend != "Brian" }
+  end
+  print invited_list(friends)
+  print friends
+
+
+  # The return value of the each method is the original array it was called on.
+  # The return value of the map method is a new array containing the results of applying the block to each element of the original array.
+  # The return value of the select method is a new array containing all the elements of the original array for which the given block returns a true value.
+  # The return value of the reduce method is the final value of the accumulator.
+  # The return value of the bang method (!) is the original array it was called on, after it has been modified by the method.
+
+# CHAINING ENUMERABLE METHODS
+  # We can chain enumerable methods together to perform more complex operations on arrays and hashes.
+  # Let's say we have an array of numbers and we want to:
+    # 1. Select only the odd numbers
+    # 2. Multiply each odd number by 3
+    # 3. Add all the results together
+  my_numbers = [1, 2, 3, 4, 5]
+  result = my_numbers.select { |number| number.odd? }.map { |number| number * 3 }.reduce { |sum, number| sum + number }
+  puts result
+
+# The order of the methods in the chain matters. The result of the first method is passed to the second method, and so on.
+# In the example above, the result of the select method is passed to the map method, and the result of the map method is passed to the reduce method.
+# If we were to change the order of the methods, we would get a different result.
+  # my_numbers = [1, 2, 3, 4, 5]
+  # result = my_numbers.reduce { |sum, number| sum + number }.select { |number| number.odd? }.map { |number| number * 3 }
+  # puts result
+  # This would result in a NoMethodError because the select method is not available for the result of the reduce method. The reduce method returns a single value, not an array.
+
+# The order of the methods in the chain matters. The result of the first method is passed to the second method, and so on.
+# In the example above, the result of the select method is passed to the map method, and the result of the map method is passed to the reduce method.
+# If we were to change the order of the methods, we would get a different result.
+# The order of the methods in the chain matters. The result of the first method is passed to the second method, and so on.
