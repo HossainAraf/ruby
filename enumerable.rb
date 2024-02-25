@@ -68,3 +68,24 @@ salaries = [1200, 1500, 1100, 1800]
 expend_without_houserent = salaries.map { |salary| salary -700} # house rent is 700
 puts expend_without_houserent
 # The map method returns a new array containing the results of applying the block to each element of the original array.
+
+# select METHOD
+  # The select method returns a new array containing all the elements of the original array for which the given block returns a true value.
+  # Let's achieve this using each method first
+friends = ["Sharon", "Leo", "Leila", "Brian", "Arun"]
+invited_list = []
+friends.each do |friend|
+  if friend != "Brian"
+    invited_list.push(friend)
+  end
+end
+puts invited_list
+
+# Now let's achieve the same result using the select method
+friends = ["Sharon", "Leo", "Leila", "Brian", "Arun"]
+invited_list = friends.select { |friend| friend != "Brian" }
+puts invited_list
+
+responses = {:"Sharon" => "yes", :"Leo" => "no", :"Leila" => "yes", :"Brian" => "no", :"Arun" => "yes"}
+puts responses.select { |person, response| response == "yes" }
+
