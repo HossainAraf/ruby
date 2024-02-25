@@ -35,3 +35,22 @@ friends = ['Sharon', 'Leo', 'Leila', 'Brian', 'Arun']
 invited_list = friends.select { |friend| friend != 'Brian' }
 puts friends.include?('Brian')
 puts invited_list.include?('Brian')
+
+# any? METHOD
+ # without using any? method
+numbers = [21, 42, 303, 499, 550, 811]
+result = false
+numbers.each do |number|
+  if number > 500
+    result = true
+  end
+end
+puts result
+
+ # using any? method
+numbers = [21, 42, 303, 499, 550, 811]
+result = numbers.any? { |number| number > 500 }
+puts result
+
+result = numbers.any? { |number| number < 20 }
+puts result
