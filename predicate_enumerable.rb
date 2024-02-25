@@ -77,3 +77,28 @@ puts result
 result = fruits.all? { |fruit| fruit.length >= 5 }
 puts result
 
+# none? METHOD
+  # without using none? method
+numbers = [3, 5, 7, 11, 13, 15]
+result = true
+numbers.each do |number|
+  if number.even?
+    result = false
+  end
+end
+puts result
+
+  # using none? method
+numbers = [3, 5, 7, 11, 13, 15]
+result = numbers.none? { |number| number.even? }
+puts result
+
+fruits = ['apple', 'banana', 'pear']
+result = fruits.none? { |fruit| fruit.length > 5 }
+puts result
+
+result = fruits.none? { |fruit| fruit.length == 5 }
+puts result
+
+result = fruits.none? { |fruit| fruit.length < 3 }
+puts result
