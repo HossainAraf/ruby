@@ -38,3 +38,24 @@ teacher_mailboxes = [
     print test_scores # [[90, 95, 99, 100], [80, 85, 89], [70, 75, 79], [60, 65, 69]]
     teacher_mailboxes[0] << "Mason" # using << (shovel operator)
     print teacher_mailboxes # [["Adam", "Baker", "Carter", "Mason"], ["Davis", "Erickson", "Fisher"], ["Garcia", "Harris", "Iverson"], ["Jackson", "Klein", "Lopez"]]
+
+    # Removing elements from the end of a nested array
+    test_scores.pop
+    print test_scores # [[90, 95, 99, 100], [80, 85, 89], [70, 75, 79]]
+    teacher_mailboxes.pop
+    print teacher_mailboxes # [["Adam", "Baker", "Carter", "Mason"], ["Davis", "Erickson", "Fisher"], ["Garcia", "Harris", "Iverson"]]
+    # Removing from a specific index
+    test_scores[0].pop
+    print test_scores # [[90, 95, 99], [80, 85, 89], [70, 75, 79]]
+    teacher_mailboxes[0].pop
+    print teacher_mailboxes # [["Adam", "Baker", "Carter"], ["Davis", "Erickson", "Fisher"], ["Garcia", "Harris", "Iverson"]]
+    # Removing from the beginning of a nested array
+    test_scores.shift
+    print test_scores # [[80, 85, 89], [70, 75, 79]]
+    teacher_mailboxes.shift
+    print teacher_mailboxes # [["Davis", "Erickson", "Fisher"], ["Garcia", "Harris", "Iverson"]]
+    # Removing from a specific index
+    test_scores[0].shift
+    print test_scores # [[85, 89], [70, 75, 79]]
+    teacher_mailboxes[0].shift
+    print teacher_mailboxes # [["Erickson", "Fisher"], ["Garcia", "Harris", "Iverson"]]
