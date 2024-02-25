@@ -120,3 +120,17 @@ tally = votes.reduce(Hash.new(0)) do |result, vote|
   result
 end
 puts tally
+
+# bang METHOD (!)
+  # The bang method (!) is a convention in Ruby to indicate that the method will modify the object it's called on.
+  # The bang method available in several enumerable methods, such as map, select, and reduce, among others.
+
+  # without the bang method
+  friends = ["Sharon", "Leo", "Leila", "Brian", "Arun"]
+  puts friends.map { |friend| friend.upcase } # => ["SHARON", "LEO", "LEILA", "BRIAN", "ARUN"]
+  puts friends # => ["Sharon", "Leo", "Leila", "Brian", "Arun"]
+
+  # with the bang method (!)
+  friends = ["Sharon", "Leo", "Leila", "Brian", "Arun"]
+  puts friends.map! { |friend| friend.upcase } # => ["SHARON", "LEO", "LEILA", "BRIAN", "ARUN"]
+  puts friends # => ["SHARON", "LEO", "LEILA", "BRIAN", "ARUN"]
