@@ -54,3 +54,26 @@ puts result
 
 result = numbers.any? { |number| number < 20 }
 puts result
+
+# all? METHOD
+  # without using all? method
+numbers = [2, 4, 6, 8, 10]
+result = true
+numbers.each do |number|
+  if number.odd?
+    result = false
+  end
+end
+puts result
+
+  # using all? method
+numbers = [2, 4, 6, 8, 10]
+result = numbers.all? { |number| number.even? }
+puts result
+
+fruits = ['apple', 'banana', 'pear']
+result = fruits.all? { |fruit| fruit.length >= 3 }
+puts result
+result = fruits.all? { |fruit| fruit.length >= 5 }
+puts result
+
