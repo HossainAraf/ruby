@@ -26,3 +26,15 @@ teacher_mailboxes = [
   print immutable # [[nil, nil], [nil, nil], [nil, nil]]
   immutable[0][0] = 100
   print immutable # [[100, nil], [nil, nil], [nil, nil]]
+
+  # ADDING & REMOVING ELEMENTS FROM NESTED ARRAYS
+    # Adding elements to the end of a nested array
+  test_scores.push([60, 65, 69]) # using push method
+  print test_scores # [[90, 95, 99], [80, 85, 89], [70, 75, 79], [60, 65, 69]]
+  teacher_mailboxes << ["Jackson", "Klein", "Lopez"] # using << (shovel operator)
+  print teacher_mailboxes # [["Adam", "Baker", "Carter"], ["Davis", "Erickson", "Fisher"], ["Garcia", "Harris", "Iverson"], ["Jackson", "Klein", "Lopez"]]
+    # Adding to a specific index
+    test_scores[0].push(100) # using push method
+    print test_scores # [[90, 95, 99, 100], [80, 85, 89], [70, 75, 79], [60, 65, 69]]
+    teacher_mailboxes[0] << "Mason" # using << (shovel operator)
+    print teacher_mailboxes # [["Adam", "Baker", "Carter", "Mason"], ["Davis", "Erickson", "Fisher"], ["Garcia", "Harris", "Iverson"], ["Jackson", "Klein", "Lopez"]]
