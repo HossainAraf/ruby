@@ -38,7 +38,17 @@ teacher_mailboxes = [
     print test_scores # [[90, 95, 99, 100], [80, 85, 89], [70, 75, 79], [60, 65, 69]]
     teacher_mailboxes[0] << "Mason" # using << (shovel operator)
     print teacher_mailboxes # [["Adam", "Baker", "Carter", "Mason"], ["Davis", "Erickson", "Fisher"], ["Garcia", "Harris", "Iverson"], ["Jackson", "Klein", "Lopez"]]
-
+    # Adding to the beginning of a nested array
+    test_scores.unshift([50, 55, 59]) # using unshift method
+    print test_scores # [[50, 55, 59], [90, 95, 99, 100], [80, 85, 89], [70, 75, 79], [60, 65, 69]]
+    teacher_mailboxes.unshift(["Hill", "Irving", "Johnson"]) # using unshift method
+    print teacher_mailboxes # [["Hill", "Irving", "Johnson"], ["Adam", "Baker", "Carter", "Mason"], ["Davis", "Erickson", "Fisher"], ["Garcia", "Harris", "Iverson"], ["Jackson", "Klein", "Lopez"]]
+    # Adding to a specific index
+    test_scores[0].unshift(40) # using unshift method
+    print test_scores # [[40, 50, 55, 59], [90, 95, 99, 100], [80, 85, 89], [70, 75, 79], [60, 65, 69]]
+    teacher_mailboxes[0].unshift("Gordon") # using unshift method
+    print teacher_mailboxes # [["Gordon", "Hill", "Irving", "Johnson"], ["Adam", "Baker", "Carter", "Mason"], ["Davis", "Erickson", "Fisher"], ["Garcia", "Harris", "Iverson"], ["Jackson", "Klein", "Lopez"]]
+    
     # Removing elements from the end of a nested array
     test_scores.pop
     print test_scores # [[90, 95, 99, 100], [80, 85, 89], [70, 75, 79]]
