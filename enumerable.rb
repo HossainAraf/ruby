@@ -89,3 +89,34 @@ puts invited_list
 responses = {:"Sharon" => "yes", :"Leo" => "no", :"Leila" => "yes", :"Brian" => "no", :"Arun" => "yes"}
 puts responses.select { |person, response| response == "yes" }
 
+# reduce METHOD
+  # The reduce method (also called inject) combines all elements of the array by applying a binary operation, specified by a block or a symbol that names a method or operator.
+  # Let's achieve this using each method first
+my_numbers = [5, 6, 7, 8]
+sum = 0
+my_numbers.each { |number| sum += number }
+puts sum
+
+# Now let's achieve the same result using the reduce method
+my_numbers = [5, 6, 7, 8]
+output = my_numbers.reduce { |sum, number| sum + number }
+puts output
+# accumulator: the first block parameter, sum in this case, is the accumulator. It accumulates the results of the block as it is executed for each element of the array.
+# element: the second block parameter, number in this case, is the current element of the array.
+# The reduce method returns the final value of the accumulator.
+# The result of the block is stored in the accumulator and then passed to the next iteration of the block. THe accululator is also the value that the reduce method returns at the end.By default, the accumulator is the first element of the array. So, for each step of the iteration, we would have the following:
+# 1. Iteration 0: sum = 5+6 = 11
+# 2. Iteration 1: sum = 11+7 = 18
+# 3. Iteration 2: sum = 18+8 = 26
+
+# We can also set a default initial value for the accumulator.
+my_numbers = [5, 6, 7, 8]
+output = my_numbers.reduce(1000) { |sum, number| sum + number }
+puts output
+
+votes = ["Bob's Dirty Burger Shack", "St. Mark's Bistro", "Bob's Dirty Burger Shack"]
+tally = votes.reduce(Hash.new(0)) do |result, vote|
+  result[vote] += 1
+  result
+end
+puts tally
