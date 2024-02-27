@@ -143,3 +143,5 @@ vehicl = {
 }
 
 puts vehicles.select { |name, data| data[:year]&. >= 2020 }
+
+print vehicles.collect { |name, data| name if data[:year]&. >= 2020 }
