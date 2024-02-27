@@ -129,3 +129,8 @@ vehicles[:dave] = { year: 2021, make: "Ford", model: "Escape" }
 puts vehicles
 vehicles[:alice][:color] = "blue"
 puts vehicles
+
+vehicles.delete(:blake)
+puts vehicles
+vehicles[:dave].delete(:year)
+puts vehicles
