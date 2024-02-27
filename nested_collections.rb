@@ -69,3 +69,42 @@ teacher_mailboxes = [
     print test_scores # [[85, 89], [70, 75, 79]]
     teacher_mailboxes[0].shift
     print teacher_mailboxes # [["Erickson", "Fisher"], ["Garcia", "Harris", "Iverson"]]
+    puts
+
+# ITERATING OVER NESTED ARRAYS
+teacher_mailboxes = [
+  ["Adam", "Baker", "Carter"],
+  ["Davis", "Erickson", "Fisher"],
+  ["Garcia", "Harris", "Iverson"]
+]
+# Let's think the nested array which have rows and columns. Each row is the nested element and each column is the index of the nested element.
+teacher_mailboxes.each_with_index do |row, row_index|
+  puts "Row: #{row_index} = #{row}"
+end
+
+teacher_mailboxes.each_with_index do |row, row_index|
+  row.each_with_index do |teacher, col_index|
+    puts "Row: #{row_index}, Col: #{col_index} = #{teacher}"
+  end
+end
+
+# USING flatten METHOD TO CONVERT NESTED ARRAY TO SINGLE ARRAY
+print teacher_mailboxes.flatten # ["Adam", "Baker", "Carter", "Davis", "Erickson", "Fisher", "Garcia", "Harris", "Iverson"]
+puts 
+teacher_mailboxes.flatten.each do |teacher|
+  print teacher + ", "
+end
+puts
+
+test_scores = [[97, 76, 79, 93], [79, 84, 76, 79], [88, 67, 64, 76], [94, 55, 67, 81]]
+#=> [[97, 76, 79, 93], [79, 84, 76, 79], [88, 67, 64, 76], [94, 55, 67, 81]]
+
+puts test_scores.any? do |scores|
+  scores.all? { |score| score > 80 }
+end
+#=> As per The Odin Project & ChatGPT - false
+# => My terminal & Replit - true
+
+puts test_scores.all? do |scores|
+  scores.any? { |score| score > 80 }
+end
