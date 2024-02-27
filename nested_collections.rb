@@ -145,3 +145,7 @@ vehicl = {
 puts vehicles.select { |name, data| data[:year]&. >= 2020 }
 
 print vehicles.collect { |name, data| name if data[:year]&. >= 2020 }
+puts 
+
+  # filter_map method (combination collect & compact method) to avoid nil values
+print vehicles.filter_map { |name, data| name if data[:year]&. >= 2020 }
