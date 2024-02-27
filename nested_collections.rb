@@ -99,16 +99,16 @@ puts
 test_scores = [[97, 76, 79, 93], [79, 84, 76, 79], [88, 67, 64, 76], [94, 55, 67, 81]]
 #=> [[97, 76, 79, 93], [79, 84, 76, 79], [88, 67, 64, 76], [94, 55, 67, 81]]
 
-puts test_scores.any? do |scores|
+puts (test_scores.any? do |scores|
   scores.all? { |score| score > 80 }
-end
-#=> As per The Odin Project & ChatGPT - false
-# => My terminal & Replit - true
+end )
+ # Alternaives collected from my stackoverflow-question:
+puts(test_scores.any? do |scores| scores.all? { |score| score > 80 } end)
+puts test_scores.any? { |scores| scores.all? { |score| score > 80 } }
 
 puts test_scores.all? do |scores|
   scores.any? { |score| score > 80 }
 end
-
 # NESTED HASHES
 vehicles = {
   alice: { year: 2019, make: "Toyota", model: "Corolla" },
