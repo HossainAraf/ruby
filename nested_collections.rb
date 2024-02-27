@@ -134,3 +134,12 @@ vehicles.delete(:blake)
 puts vehicles
 vehicles[:dave].delete(:year)
 puts vehicles
+puts 
+# METHODS FOR ITERATING OVER NESTED HASHES
+vehicl = {
+  alice: { year: 2019, make: "Toyota", model: "Corolla" },
+  blake: { year: 2020, make: "Volkswagen", model: "Beetle" },
+  caleb: { year: 2020, make: "Honda", model: "Civil" }
+}
+
+puts vehicles.select { |name, data| data[:year]&. >= 2020 }
