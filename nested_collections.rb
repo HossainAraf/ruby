@@ -108,3 +108,18 @@ end
 puts test_scores.all? do |scores|
   scores.any? { |score| score > 80 }
 end
+
+# NESTED HASHES
+vehicles = {
+  alice: { year: 2019, make: "Toyota", model: "Corolla" },
+  blake: { year: 2020, make: "Volkswagen", model: "Beetle" },
+  caleb: { year: 2020, make: "Honda", model: "Civil" }
+}
+ # Accessing elements in a nested hash
+puts vehicles[:alice][:year] # 2019
+
+puts vehicles[:zoe] # nil
+# puts vehicles[:zoe][:year] # NoMethodError: undefined method `[]' for nil:NilClass
+puts vehicles[:alice][:color] #nil
+puts vehicles.dig(:zoe, :year) # nil
+puts vehicles.dig(:alice, :color) # nil
