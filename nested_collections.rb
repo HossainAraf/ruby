@@ -123,3 +123,9 @@ puts vehicles[:zoe] # nil
 puts vehicles[:alice][:color] #nil
 puts vehicles.dig(:zoe, :year) # nil
 puts vehicles.dig(:alice, :color) # nil
+
+# ADDING & REMOVING ELEMENTS FROM NESTED HASHES
+vehicles[:dave] = { year: 2021, make: "Ford", model: "Escape" }
+puts vehicles
+vehicles[:alice][:color] = "blue"
+puts vehicles
